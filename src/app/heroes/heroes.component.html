@@ -1,0 +1,212 @@
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI addsymbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card svg.material-icons path {
+    fill: #888;
+  }
+  .card.card-small {
+    height: 16px;
+    width: 10px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+
+  .card.card-small {
+    height: 16px;
+    width: 80px;
+  }
+
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+    text-align:right;
+    left: 50%;
+    margin-left: -300px;
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+</style>
+
+<p>firstnum:{{firstnum}}</p>
+<p>secondnum:{{secondnum}}</p>
+<p>addsymbols:{{symbols}}</p>
+
+<div style="text-align:center;" ><h1>Calculation</h1></div><br>
+
+<div class="terminal"  >
+  <pre>{{display}}</pre>
+</div>
+<div class="card-container">
+    <button class="card card-small" (click)="addNum('7')" tabindex="0" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>7</span>
+    </button>
+    <button class="card card-small" (click)="addNum('8')" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>8</span>
+    </button>
+    <button class="card card-small" (click)="addNum('9')" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>9</span>
+    </button>
+    <button class="card card-small" (click)="addsymbol('+')" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>+</span>
+    </button>
+    <button class="card card-small" (click)="backspace()" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>←</span>
+    </button>
+</div>
+<div class="card-container">    
+    <button class="card card-small" (click)="addNum('4')" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>4</span>
+    </button>
+    <button class="card card-small" (click)="addNum('5')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>5</span>
+    </button>
+    <button class="card card-small" (click)="addNum('6')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>6</span>
+    </button>
+    <button class="card card-small" (click)="addsymbol('-')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>-</span>
+    </button>
+    <button class="card card-small" (click)="addsymbol('C')" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>C</span>
+    </button>
+</div>
+<div class="card-container">
+    <button class="card card-small" (click)="addNum('1')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>1</span>
+    </button>
+    <button class="card card-small" (click)="addNum('2')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>2</span>
+    </button>    
+    <button class="card card-small" (click)="addNum('3')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>3</span>
+    </button>
+    <button class="card card-small" (click)="addsymbol('×')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>×</span>
+    </button>
+    <button class="card card-small" (click)="addsymbol('%')" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>%</span>
+    </button>
+</div>
+<div class="card-container">
+    <button class="card card-small" (click)="addNum('.')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>.</span>
+    </button>
+    <br>  
+    <button class="card card-small" (click)="addNum('0')" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>0</span>
+    </button>
+    <button class="card card-small" (click)="docount(); symbols = '';">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>=</span>
+    </button>
+    <button class="card card-small" (click)="addsymbol('÷')">
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>÷</span>
+    </button>
+    <button class="card card-small" (click)="dosign_bit()" >
+      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+      <span>+/-</span>
+    </button>
+  </div>
+
+<div>
+  <button class="card card-small"  (click)="goBack()">
+    <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
+    <span>返回</span>
+  </button>
+</div>
