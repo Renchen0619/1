@@ -31,7 +31,7 @@ export class HeroesComponent implements OnInit {
     this.display  += String(a)  ;
   }
 
-  addsymbol(b : string):void{
+  addSymbol(b : string):void{
     if(b == 'C'){
       this.firstnum = '';
       this.secondnum = '';
@@ -85,9 +85,9 @@ export class HeroesComponent implements OnInit {
         return ;
       }
   }
-  dosign_bit() : void{
+  doSign_bit() : void{
     if(this.firstnum != '' && this.secondnum != ''){
-      this.docount();
+      this.doCount();
       this.display = String (Number(this.display) * (-1));
       this.secondnum = this.display;
     }else if(this.secondnum != ''){

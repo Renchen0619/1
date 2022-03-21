@@ -1,6 +1,6 @@
 <style>
   :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI addsymbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI addSymbol";
     font-size: 14px;
     color: #333;
     box-sizing: border-box;
@@ -105,9 +105,9 @@
 
 </style>
 
-<p>firstnum:{{firstnum}}</p>
+<!-- <p>firstnum:{{firstnum}}</p>
 <p>secondnum:{{secondnum}}</p>
-<p>addsymbols:{{symbols}}</p>
+<p>addSymbols:{{symbols}}</p> -->
 
 <div style="text-align:center;" ><h1>Calculation</h1></div><br>
 
@@ -127,11 +127,11 @@
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>9</span>
     </button>
-    <button class="card card-small" (click)="addsymbol('+')" >
+    <button class="card card-small" (click)="addSymbol('+')" >
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>+</span>
     </button>
-    <button class="card card-small" (click)="backspace()" >
+    <button class="card card-small" (click)="backSpace()" >
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>←</span>
     </button>
@@ -149,11 +149,11 @@
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>6</span>
     </button>
-    <button class="card card-small" (click)="addsymbol('-')">
+    <button class="card card-small" (click)="addSymbol('-')">
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>-</span>
     </button>
-    <button class="card card-small" (click)="addsymbol('C')" >
+    <button class="card card-small" (click)="addSymbol('C')" >
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>C</span>
     </button>
@@ -171,11 +171,11 @@
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>3</span>
     </button>
-    <button class="card card-small" (click)="addsymbol('×')">
+    <button class="card card-small" (click)="addSymbol('×')">
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>×</span>
     </button>
-    <button class="card card-small" (click)="addsymbol('%')" >
+    <button class="card card-small" (click)="addSymbol('%')" >
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>%</span>
     </button>
@@ -190,15 +190,15 @@
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>0</span>
     </button>
-    <button class="card card-small" (click)="docount(); symbols = '';">
+    <button class="card card-small" (click)="doCount(); symbols = '';">
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>=</span>
     </button>
-    <button class="card card-small" (click)="addsymbol('÷')">
+    <button class="card card-small" (click)="addSymbol('÷')">
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>÷</span>
     </button>
-    <button class="card card-small" (click)="dosign_bit()" >
+    <button class="card card-small" (click)="doSign_bit()" >
       <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>+/-</span>
     </button>
