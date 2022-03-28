@@ -1,105 +1,116 @@
-<!-- <p>firstnum:{{firstnum}}</p>
-<p>secondnum:{{secondnum}}</p>
-<p>addSymbols:{{symbols}}</p> -->
+<!-- <p>firstnum:{{firstnum}}    variable :{{variable}}</p>
+<p>secondnum:{{secondnum}}  operation :{{ operation}}</p>
+<p>addSymbols:{{symbols}}</p>
+<p>memorizeNum:{{memorizeNum}}</p> -->
 
-<div style="text-align:center;" ><h1>Calculation</h1></div><br>
-
-<div class="terminal"  >
-  <pre>{{display}}</pre>
-</div>
-<div class="card-container">
-    <button class="card card-small" (click)="addNum('7')" tabindex="0" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>7</span>
+<h1 style="text-align:center;">Calculation</h1>
+<div class="Calculation" >
+  <div class="terminal"  >
+    <pre>{{display}}</pre>
+  </div>
+  <div class="card-container">
+    <button class="card card-small" (click)="Memorize('M+')" >
+      <span>M+</span>
     </button>
-    <button class="card card-small" (click)="addNum('8')" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>8</span>
-    </button>
-    <button class="card card-small" (click)="addNum('9')" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>9</span>
-    </button>
-    <button class="card card-small" (click)="addSymbol('+')" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>+</span>
-    </button>
-    <button class="card card-small" (click)="backSpace()" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>←</span>
-    </button>
-</div>
-<div class="card-container">    
-    <button class="card card-small" (click)="addNum('4')" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>4</span>
-    </button>
-    <button class="card card-small" (click)="addNum('5')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>5</span>
-    </button>
-    <button class="card card-small" (click)="addNum('6')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>6</span>
-    </button>
-    <button class="card card-small" (click)="addSymbol('-')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>-</span>
+    <button class="card card-small" (click)="Memorize('M-')" >
+      <span>M-</span>
     </button>
     <button class="card card-small" (click)="addSymbol('C')" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>C</span>
     </button>
-</div>
-<div class="card-container">
+    <button class="card card-smalls" (click)="backSpace()" >
+      <span>←</span>
+    </button>
+    <button class="card card-small" (click)="addSymbol('+')" >
+      <span>+</span>
+    </button>   
+  </div>
+  <div class="card-container">
+    <button class="card card-small" (click)="Memorize('MC')" >
+      <span>MC</span>
+    </button>
+    <button class="card card-small" (click)="Memorize('MR')" >
+      <span>MR</span>
+    </button>
+      <button class="card card-small" (click)="addNum('7')" tabindex="0" >
+        <span>7</span>
+      </button>
+      <button class="card card-small" (click)="addNum('8')" >
+        <span>8</span>
+      </button>
+      <button class="card card-small" (click)="addNum('9')" >
+        <span>9</span>
+      </button>
+      <button class="card card-small" (click)="addSymbol('-')">
+        <span>-</span>
+      </button>
+  </div>
+  <div class="card-container">    
+    <button class="card card-small" (click)="addSymbol('x^y');">
+      <span>x²</span>
+    </button>
+    <button class="card card-small" (click)="addSymbol('√￣'); ">
+      <span>√￣</span>
+    </button>
+      <button class="card card-small" (click)="addNum('4')" >
+        <span>4</span>
+      </button>
+      <button class="card card-small" (click)="addNum('5')">
+        <span>5</span>
+      </button>
+      <button class="card card-small" (click)="addNum('6')">
+        <span>6</span>
+      </button>
+      <button class="card card-small" (click)="addSymbol('×')">
+        <span>×</span>
+      </button>
+
+
+  </div>
+  <div class="card-container">
+    <button class="card card-small" (click)="addSymbol('ln')" tabindex="0" >
+      <span>ln</span>
+    </button> 
+    <button class="card card-small" (click)="addSymbol('log')" tabindex="0" >
+      <span>log</span>
+    </button>  
     <button class="card card-small" (click)="addNum('1')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>1</span>
     </button>
     <button class="card card-small" (click)="addNum('2')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>2</span>
     </button>    
     <button class="card card-small" (click)="addNum('3')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>3</span>
     </button>
-    <button class="card card-small" (click)="addSymbol('×')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>×</span>
-    </button>
+      <button class="card card-small" (click)="addSymbol('÷')">
+        <span>÷</span>
+      </button>
+  </div>
+  <div class="card-container">
     <button class="card card-small" (click)="addSymbol('%')" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>%</span>
     </button>
-</div>
-<div class="card-container">
-    <button class="card card-small" (click)="addNum('.')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>.</span>
-    </button>
-    <br>  
-    <button class="card card-small" (click)="addNum('0')" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>0</span>
-    </button>
-    <button class="card card-small" (click)="doCount(); symbols = '';">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>=</span>
-    </button>
-    <button class="card card-small" (click)="addSymbol('÷')">
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
-      <span>÷</span>
-    </button>
     <button class="card card-small" (click)="doSign_bit()" >
-      <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
       <span>+/-</span>
     </button>
+    <button class="card card-smalls" (click)="addNum('0')" >
+      <span>0</span>
+    </button>
+    <button class="card card-small" (click)="addNum('.')">
+      <span>.</span>
+    </button>
+
+    <button class="card card-small" (click)="doCount(); symbols = '';">
+      <span>=</span>
+    </button>
+
+
   </div>
+</div>
 
 <div>
   <button class="card card-small"  (click)="goBack()">
-    <svg class="material-icons" width="12" height="12" viewBox="0 0 24 24"></svg>
     <span>返回</span>
   </button>
 </div>

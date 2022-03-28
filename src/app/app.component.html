@@ -5,9 +5,6 @@
     src="http://img2.3png.com/bdcb9e43f0c71e4a0e703485775ba8a43f1d.png"
   />
   <span>Ren home</span>
-    <div class="spacer"></div>
-    <a aria-label="Angular on YouTube" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=G46fjVzQ7BQ" title="YouTube">
-    </a>
 </div>
 <br><br><br>
 
@@ -15,15 +12,12 @@
 
 <div class="card-container" *ngIf="selection.value == ''">
   <button class="card card-small" (click)="selection.value = 'Calculation'">
-    <svg class="material-icons" width="12" height="12" ></svg>
     <span>Calculation</span>
   </button>
   <button class="card card-small" (click)="selection.value = 'exchange_rate'">
-    <svg class="material-icons" width="12" height="12" ></svg>
     <span>匯率</span>
   </button>
   <button class="card card-small" (click)="selection.value = 'unit_conversion'">
-    <svg class="material-icons" width="12" height="12" ></svg>
     <span>單位換算</span>
   </button>
 </div>
